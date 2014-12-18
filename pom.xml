@@ -15,7 +15,7 @@
   </dependency>
   <dependency>
   	  <groupId>org.apache.commons</groupId>
-  	  <artifactId>ApacheCommonsLibrary</artifactId>
+  	  <artifactId>commons-lang3</artifactId>
   	  <version>3.3.2</version>
   </dependency>
   <dependency>
@@ -24,8 +24,8 @@
   	  <version>18.0</version>
   </dependency>
   <dependency>
-  	  <groupId>org.apache.logging</groupId>
-  	  <artifactId>Log4j-2</artifactId>
+  	  <groupId>org.apache.logging.log4j</groupId>
+  	  <artifactId>log4j</artifactId>
   	  <version>2.1</version>
   </dependency>
     <dependency>
