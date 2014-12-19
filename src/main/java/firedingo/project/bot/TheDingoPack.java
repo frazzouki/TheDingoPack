@@ -6,6 +6,7 @@ import org.pircbotx.PircBotX;
 
 public class TheDingoPack {
 	
+	//Basic bot configuration setup
 	Configuration config = new Configuration.Builder()
     .setName(firedingo.project.bot.reference.Reference.NICK) //Nick of the bot. CHANGE IN YOUR CODE
     //.setLogin(" ") //Login part of hostmask, eg name:login@host (MIGHT NOT BE NEEDED)
@@ -14,5 +15,19 @@ public class TheDingoPack {
     .addAutoJoinChannel("#TheDingoPack") //Join #TheDingoPack channel on connect
     .buildConfiguration(); //Create an immutable configuration from this builder
 
+	
+	//Constructor to actually create the bot
+	public TheDingoPack() {
+	
 	PircBotX TheDingoPack = new PircBotX(config);
+	
+	try {
+	TheDingoPack.startBot();
+	
+	} catch(Exception e) {
+		
+	}
+	
 }
+}
+
