@@ -14,20 +14,28 @@ public class TheDingoPack {
     .setServer(firedingo.project.bot.reference.Reference.HOST, firedingo.project.bot.reference.Reference.PORT) //The server were connecting to
     .addAutoJoinChannel("#TheDingoPack") //Join #TheDingoPack channel on connect
     .buildConfiguration(); //Create an immutable configuration from this builder
+	
+	
+	
 
 	
 	//Constructor to actually create the bot
 	public TheDingoPack() {
-	
+		System.out.println("Random Test 2");
 	PircBotX TheDingoPack = new PircBotX(config);
-	
+	System.out.println("Random Test 3");
 	try {
 	TheDingoPack.startBot();
+	System.out.println("Attempting To Connect");
 	
 	} catch(Exception e) {
-		
+		System.out.println("Connection Failed");
 	}
 	
 }
+	//realized constructor needed a call so added it here. Nearly derped :P
+	 public static void main(String[] args) {
+		 TheDingoPack bot = new TheDingoPack();
+	 }
 }
 
