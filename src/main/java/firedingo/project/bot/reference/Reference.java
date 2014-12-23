@@ -7,7 +7,7 @@ public class Reference {
     //Connection Details As Constants For Easy Customizability
     public static final String NICK = "thedingopack";
     public static final String HOST = "irc.twitch.tv";
-    public static final String OAUTH = "oauth:phc2e9y628cr1cyv2e3ktmugfdwsvc1";
+    public static final String OAUTH = "";
     public static final int PORT = 6667;
     //these two channels can be changed as necessary, extras can also be added.
     public static final String BOTCHAN = "#thedingopack";
