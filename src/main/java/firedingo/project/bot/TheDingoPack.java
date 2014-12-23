@@ -4,38 +4,45 @@ package firedingo.project.bot;
 import org.pircbotx.Configuration;
 import org.pircbotx.PircBotX;
 
+/**
+ * Created by Nay on 23/12/2014.
+ */
 public class TheDingoPack {
-	
-	//Basic bot configuration setup
-	Configuration config = new Configuration.Builder()
-    .setName(firedingo.project.bot.reference.Reference.NICK) //Nick of the bot. CHANGE IN YOUR CODE
-    //.setLogin(" ") //Login part of hostmask, eg name:login@host (MIGHT NOT BE NEEDED)
-    .setAutoNickChange(true) //Automatically change nick when the current one is in use
-    .setServer(firedingo.project.bot.reference.Reference.HOST, firedingo.project.bot.reference.Reference.PORT) //The server were connecting to
-    .addAutoJoinChannel("#TheDingoPack") //Join #TheDingoPack channel on connect
-    .buildConfiguration(); //Create an immutable configuration from this builder
-	
-	
-	
+    //starting config again in case config derp is issue, will need clean up HERE
+    Configuration<PircBotX> Config = new Configuration.Builder<PircBotX>()
+            .setServerPassword(firedingo.project.bot.reference.Reference.OAUTH)
+            .setName(firedingo.project.bot.reference.Reference.NICK)
+            .setLogin(firedingo.project.bot.reference.Reference.NICK)
+            .setAutoNickChange(true)
+            .setServerHostname(firedingo.project.bot.reference.Reference.HOST)
+            .setServerPort(firedingo.project.bot.reference.Reference.PORT)
 
-	
-	//Constructor to actually create the bot
-	public TheDingoPack() {
-		System.out.println("Random Test 2");
-	PircBotX TheDingoPack = new PircBotX(config);
-	System.out.println("Random Test 3");
-	try {
-	TheDingoPack.startBot();
-	System.out.println("Attempting To Connect");
-	
-	} catch(Exception e) {
-		System.out.println("Connection Failed");
-	}
-	
-}
-	//realized constructor needed a call so added it here. Nearly derped :P
-	 public static void main(String[] args) {
-		 TheDingoPack bot = new TheDingoPack();
-	 }
-}
+            .addAutoJoinChannel(firedingo.project.bot.reference.Reference.BOTCHAN)
+            .buildConfiguration();
 
+
+    //Constructor to actually create the bot
+    public TheDingoPack() {
+        PircBotX TheDingoPack = new PircBotX(Config);
+        try {
+            TheDingoPack.startBot();
+            System.out.println("Attempting To Connect");
+        }
+        catch (Exception e) {
+            System.out.println("Connection Failed - Error Thrown");
+        }
+        if (TheDingoPack.isConnected() == true) {
+            System.out.println("Connection Successful");
+        }
+        else {
+            System.out.println("Connection Failed");
+        }
+
+    }
+
+    //realized constructor needed a call so added it here. Nearly derped :P
+    public static void main(String[] args) {
+        new TheDingoPack();
+    }
+
+}
