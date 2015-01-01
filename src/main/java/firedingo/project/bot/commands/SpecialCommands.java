@@ -1,5 +1,6 @@
 package firedingo.project.bot.commands;
 
+import firedingo.project.bot.reference.Reference;
 import org.pircbotx.PircBotX;
 import org.pircbotx.hooks.ListenerAdapter;
 import org.pircbotx.hooks.events.JoinEvent;
@@ -16,19 +17,21 @@ public class SpecialCommands extends ListenerAdapter<PircBotX> {
     private static boolean enter = false;
 //these commands are spammy at the moment
     public void onMessage(MessageEvent<PircBotX> event) throws Exception {
-        if (event.getMessage().equalsIgnoreCase("poke")) {
-            event.getChannel().send().message("Hey That hurts, Quit it!");
+        if (Reference.visitor == false) {
+            if (event.getMessage().equalsIgnoreCase("poke")) {
+                event.getChannel().send().message("Hey That hurts, Quit it!");
 
-        }
-        if (enter == false) {
-            if (event.getUser().getNick().equalsIgnoreCase("drwarfighter")) {
-                event.getChannel().send().message("Hey Look It's The Sexy Dr :)");
-                enter = true;
             }
-        }
-        if (event.getMessage().equalsIgnoreCase("!dr")) {
-            event.getChannel().send().message("Look! Is It A Plane? Is It A Bird? No, It's The Royal Dr!!");
-        }
+            if (enter == false) {
+                if (event.getUser().getNick().equalsIgnoreCase("drwarfighter")) {
+                    event.getChannel().send().message("Hey Look It's The Sexy Dr :)");
+                    enter = true;
+                }
+            }
+            if (event.getMessage().equalsIgnoreCase("!dr")) {
+                event.getChannel().send().message("Look! Is It A Plane? Is It A Bird? No, It's The Royal Dr!!");
+            }
+        }//End visitor If
 
         if (event.getMessage().split(" ")[0].equalsIgnoreCase("!streaming")) {
             event.getBot().sendIRC().joinChannel("#" + event.getMessage().split(" ")[1]);

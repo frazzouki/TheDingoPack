@@ -1,5 +1,6 @@
 package firedingo.project.bot.commands;
 
+import firedingo.project.bot.reference.Reference;
 import org.pircbotx.PircBotX;
 import org.pircbotx.hooks.ListenerAdapter;
 import org.pircbotx.hooks.events.MessageEvent;
@@ -15,17 +16,19 @@ public class FunCommands extends ListenerAdapter<PircBotX> {
 
 //these commands work well, need to add next step to some
         public void onMessage (MessageEvent < PircBotX > event)throws Exception {
-            userVariable = event.getMessage().substring(5);
-            if (event.getMessage().contains("!slap")) {
-                event.getChannel().send().message(event.getUser().getNick() + " Slaps " + userVariable + " in the face!");
-            }
-            userVariable = event.getMessage().substring(5);
-            if (event.getMessage().contains("!gift")) {
-                event.getChannel().send().message((event.getUser().getNick() + " Has Given You A Present " + userVariable
-                + ". Awww Isn't That Nice! Why Don't you !open it."));
-            }
-            if (event.getMessage().equalsIgnoreCase("!open")) {
-                event.getChannel().send().message("Aww Look You Got a <3 :)");
+            if (Reference.visitor == false) {
+                userVariable = event.getMessage().substring(5);
+                if (event.getMessage().contains("!slap")) {
+                    event.getChannel().send().message(event.getUser().getNick() + " Slaps " + userVariable + " in the face!");
+                }
+                userVariable = event.getMessage().substring(5);
+                if (event.getMessage().contains("!gift")) {
+                    event.getChannel().send().message((event.getUser().getNick() + " Has Given You A Present " + userVariable
+                            + ". Awww Isn't That Nice! Why Don't you !open it."));
+                }
+                if (event.getMessage().equalsIgnoreCase("!open")) {
+                    event.getChannel().send().message("Aww Look You Got a <3 :)");
+                }
             }
         }
     }
