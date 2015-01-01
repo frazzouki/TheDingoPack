@@ -29,5 +29,16 @@ public class SpecialCommands extends ListenerAdapter<PircBotX> {
         if (event.getMessage().equalsIgnoreCase("!dr")) {
             event.getChannel().send().message("Look! Is It A Plane? Is It A Bird? No, It's The Royal Dr!!");
         }
+
+        if (event.getMessage().split(" ")[0].equalsIgnoreCase("!streaming")) {
+            event.getBot().sendIRC().joinChannel("#" + event.getMessage().split(" ")[1]);
+            //insert delay here
+            event.getChannel().send().message("Hello " + event.getMessage().split(" ")[1] + " I'm Firedingo99365's Bot Project For Experience's Sake."
+            + "I just dropped by to tell you I Hope You have a good stream!");
+            event.getChannel().send().part();
+        }
+        else {
+            event.respond("The Correct Syntax Is !streaming <username>");
+        }
     }
 }

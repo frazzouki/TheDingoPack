@@ -51,5 +51,9 @@ public class BasicCommands extends ListenerAdapter<PircBotX> {
         if (event.getMessage().equalsIgnoreCase("!join")) {
             event.getBot().sendIRC().joinChannel("#" + event.getUser().getNick());
         }
+
+        if (event.getMessage().equalsIgnoreCase("!leave")) {
+            event.getChannel().send().part();
+        }
     }
 }
