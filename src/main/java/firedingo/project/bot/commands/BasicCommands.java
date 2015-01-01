@@ -47,5 +47,9 @@ public class BasicCommands extends ListenerAdapter<PircBotX> {
         if (event.getMessage().length() > 300) {
             event.getChannel().send().message("Stop Sending Walls Of Text! Message Too Long!");
         }
+        //Can join channel but seems to have issues with hosting, will need further testing
+        if (event.getMessage().equalsIgnoreCase("!join")) {
+            event.getBot().sendIRC().joinChannel("#" + event.getUser().getNick());
+        }
     }
 }
