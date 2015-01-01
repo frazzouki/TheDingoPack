@@ -1,11 +1,16 @@
 package firedingo.project.bot;
 
 
+import ch.qos.logback.classic.Logger;
+import firedingo.project.bot.commands.BasicCommands;
 import org.pircbotx.Configuration;
 import org.pircbotx.PircBotX;
 
 /**
- * Created by Nay on 23/12/2014.
+ * Created by firedingo on 23/12/2014.
+ * This Project does contain an attached license and readme.
+ * Please see these files for additonal information.
+ * You can reach firedingo on twitter using the tag @firedingo
  */
 public class TheDingoPack {
     //starting config again in case config derp is issue, will need clean up HERE
@@ -16,6 +21,7 @@ public class TheDingoPack {
             .setAutoNickChange(true)
             .setServerHostname(firedingo.project.bot.reference.Reference.HOST)
             .setServerPort(firedingo.project.bot.reference.Reference.PORT)
+            .addListener(new BasicCommands())
 
             .addAutoJoinChannel(firedingo.project.bot.reference.Reference.BOTCHAN)
             .buildConfiguration();
@@ -30,6 +36,9 @@ public class TheDingoPack {
         }
         catch (Exception e) {
             System.out.println("Connection Failed - Error Thrown");
+            //Logger.ERROR_INT(e.printStackTrace());
+            System.out.println(e.getMessage());
+
         }
         if (TheDingoPack.isConnected() == true) {
             System.out.println("Connection Successful");
