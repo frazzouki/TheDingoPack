@@ -7,8 +7,8 @@ Commands
 ==========
 The following is a list of commands available, a description of what they do and a permission level.
 
-~!commands - Provides A Link To This Readme File on Github. - Everyone
-~!version - Gives The Current Bot Version - Everyone
+~!commands - Provides A Link To This Readme File on Github. - Everyone <br />
+~!version - Gives The Current Bot Version - Everyone <br />
 ~!code - Gives a link to where the bot's source code can be found - Everyone
 ~!OpMe - Makes The Person An Op in The Channel is the Bot's own. - Owner Only
 ~!Join - Makes The Bot Join Your Channel. - Everyone
