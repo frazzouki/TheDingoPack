@@ -50,13 +50,21 @@ public class BasicCommands extends ListenerAdapter<PircBotX> {
             //for testing can be removed later
             if (event.getUser().getNick().compareToIgnoreCase("firedingo99365") == 0) {
                 if (event.getMessage().contains("!opMe")) {
-                    event.getChannel().send().op(event.getUser());
+                   // event.getChannel().send().op(event.getUser());
+                    event.getChannel().send().message(".mod " + event.getUser().getNick());
+                    event.getChannel().send().message("Now Giving Mod To " + event.getUser().getNick());
                 }
+                if (event.getMessage().contains("!deopMe")) {
+                    //event.getChannel().send().deOp(event.getUser());
+                    event.getChannel().send().message(".unmod " + event.getUser().getNick());
+                    event.getChannel().send().message("Now Taking Mod From " + event.getUser().getNick());
+                }
+            }
                 if (event.getMessage().length() > 300) {
                     event.getChannel().send().message("Stop Sending Walls Of Text! Message Too Long!");
                     event.getChannel().send().message(".timeout " + event.getUser().getNick() + " 1");
                 }
-            }
+
             //ban a user through the bot
           //  if (event.getMessage().)
             //host a channel manually
@@ -73,8 +81,7 @@ public class BasicCommands extends ListenerAdapter<PircBotX> {
             }
 
         }//End Visitor If
-        if(Permitted.Streamer.compareToIgnoreCase(event.getUser().getNick()) == 0) {
-            if (event.getMessage().equalsIgnoreCase("!visitor")) {
+            if (event.getMessage().equalsIgnoreCase("!visitor") && (event.getUser().getNick().compareToIgnoreCase(Permitted.Streamer) == 0)) {
                 if (Reference.visitor == false) {
                     Reference.visitor = true;
                     event.getChannel().send().message("The Visitor Mode Has Been Turned On!");
@@ -83,7 +90,6 @@ public class BasicCommands extends ListenerAdapter<PircBotX> {
                     event.getChannel().send().message("The Visitor Mode Has Been Turned Off!");
                 }
             }
-        }
         else {
             event.getChannel().send().message("You do not have the permission to run that Command!");
         }
