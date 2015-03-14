@@ -22,7 +22,7 @@ The following is a list of commands available, a description of what they do and
 
 Trigger Commands
 ==================
-These Are commands that only run when conditions are met. The following lists them as trigger, description, response and permission level. <br />
+These Are commands that only run when conditions are met. The following lists them as trigger, description, response and permission level. <br /> <br />
 ~hello - Causes The Bot To Say Hello Back To The User. (Currently has no limit) - Everyone <br />
 ~hey - Causes The Bot To Say Hey Back To The User. (Currently has no limit) - Everyone <br />
 ~o/ - Causes The Bot To wave Back To The User. (Currently has no limit) - Everyone <br />
