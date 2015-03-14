@@ -37,3 +37,20 @@ These Are commands that only run when conditions are met. The following lists th
 ~drwarfighter - Will cause a bot response on first chat post and only the first by the account known as drwarfighter - Drwarfighter Only <br />
 ~lisageek24 - Will cause a bot response on first chat post and only the first by the account known as lisageek24 - Lisageek24 Only <br />
 ~Muted - Will cause a bot response on first chat post and only the first by the account known as Muted - Muted Only <br />
+
+Releases
+===========================
+At this stage only probably quite buggy pre-releases will be available. When an official release is available, it will be announced here.
+
+Future Plans
+==========================
+~Add ranks properly <br />
+~Add a permit system <br />
+~Add backend database support <br />
+~Add a GUI <br />
+~Add Customizable connection options (ie. Connect to twitch, regular irc, other etc) <br />
+~Add Some bonus fun stuff <br />
+~Possibly add a currency system <br />
+~Actually do a changelog for versions rather than being lazy :P <br />
+~Other Stuff I have no idea about what yet. <br />
+~Take Suggestions through the issues page for the bot. <br />
