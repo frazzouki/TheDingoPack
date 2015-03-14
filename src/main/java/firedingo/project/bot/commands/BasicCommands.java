@@ -83,6 +83,11 @@ public class BasicCommands extends ListenerAdapter<PircBotX> {
                 event.getChannel().send().message("We Are Now Hosting " + event.getMessage().split(" ")[1]);
                 event.getChannel().send().message(".host " + event.getMessage().split(" ")[1]);
             }
+            //unhost a channel manually
+            if (event.getMessage().split(" ")[0].equalsIgnoreCase("!unhost")) {
+                event.getChannel().send().message("We Have Stopped Hosting " + event.getMessage().split(" ")[1]);
+                event.getChannel().send().message(".unhost");
+            }
             //Can join channel but seems to have issues with hosting, will need further testing
             if (event.getMessage().equalsIgnoreCase("!join")) {
                 event.getChannel().send().message("Now Joining the Channel #" + event.getUser().getNick() +
