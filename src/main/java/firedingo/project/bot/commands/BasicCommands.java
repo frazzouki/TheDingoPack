@@ -66,9 +66,23 @@ public class BasicCommands extends ListenerAdapter<PircBotX> {
                 }
 
             //ban a user through the bot
-          //  if (event.getMessage().)
+            //Takes The command !ban <username> <reason>
+            if (event.getMessage().split(" ")[0].equalsIgnoreCase("!ban")) {
+                event.getChannel().send().message(".ban " + event.getMessage().split(" ")[1]);
+                event.getChannel().send().message(event.getMessage().split(" ")[1] + ", You Have Been Banned because: " +
+                event.getMessage().split(" ")[2]);
+            }
+            //unban a user through the bot
+            //Takes the command !unban <username>
+            if (event.getMessage().split(" ")[0].equalsIgnoreCase("!unban")) {
+                event.getChannel().send().message(".unban " + event.getMessage().split(" ")[1]);
+                event.getChannel().send().message(event.getMessage().split(" ")[1] + ", You have been unbanned! Don't Break The Rules This Time!");
+            }
             //host a channel manually
-           // if (event.getMessage().)
+            if (event.getMessage().split(" ")[0].equalsIgnoreCase("!host")) {
+                event.getChannel().send().message("We Are Now Hosting " + event.getMessage().split(" ")[1]);
+                event.getChannel().send().message(".host " + event.getMessage().split(" ")[1]);
+            }
             //Can join channel but seems to have issues with hosting, will need further testing
             if (event.getMessage().equalsIgnoreCase("!join")) {
                 event.getChannel().send().message("Now Joining the Channel #" + event.getUser().getNick() +

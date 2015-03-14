@@ -19,6 +19,9 @@ The following is a list of commands available, a description of what they do and
 ~!open - Will Let A user open a present they've been given. (Currently works on ungiven gifts) - Everyone <br />
 ~!dr - Will Run a Special Command about the person known as Drwarfighter. - Everyone <br />
 ~!streaming <username> - Will Join the Streamer's Channel, wish them a good stream and leave. (Currently Not Working) - Everyone <br />
+~!host <username> - Will Host someone and announce it in chat. - Everyone(Currently everyone, will be restricted in the future)
+~!ban <username> <reason> - Will Ban the person and tell them why in Chat.(Currently reason needs work) - Everyone(Will be restricted in the future)
+~!unban <username> - Informs the user they have been unbanned in chat. - Everyone(Will be restricted in the future)
 
 Trigger Commands
 ==================
