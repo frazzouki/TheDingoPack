@@ -1,5 +1,6 @@
 package firedingo.project.bot.commands;
 
+import firedingo.project.bot.reference.EntryValues;
 import firedingo.project.bot.reference.Reference;
 import org.pircbotx.PircBotX;
 import org.pircbotx.hooks.ListenerAdapter;
@@ -14,9 +15,6 @@ import org.pircbotx.hooks.events.QuitEvent;
  * You can reach firedingo on twitter using the tag @firedingo
  */
 public class SpecialCommands extends ListenerAdapter<PircBotX> {
-    private static boolean DrEnter = false;
-    private static boolean LisaEnter = false;
-    private static boolean MutedEnter = false;
 //these commands are spammy at the moment
     public void onMessage(MessageEvent<PircBotX> event) throws Exception {
         if (Reference.visitor == false) {
@@ -25,22 +23,28 @@ public class SpecialCommands extends ListenerAdapter<PircBotX> {
 
             }
             //Bot responds to first post by the account known as drwarfighter
-            if (event.getUser().getNick().equalsIgnoreCase("drwarfighter") && (DrEnter == false)) {
+            if (event.getUser().getNick().equalsIgnoreCase("drwarfighter") && (EntryValues.DrEnter == false)) {
                 event.getChannel().send().message("Hey Look It's The Sexy Dr :)");
-                DrEnter = true;
+                EntryValues.DrEnter = true;
             }
             if (event.getMessage().equalsIgnoreCase("!dr")) {
                 event.getChannel().send().message("Look! Is It A Plane? Is It A Bird? No, It's The Royal Dr!!");
             }
             //Bot responds to first post by the account known as lisageek24
-            if (event.getUser().getNick().equalsIgnoreCase("lisageek24") && (LisaEnter == false)) {
+            if (event.getUser().getNick().equalsIgnoreCase("lisageek24") && (EntryValues.LisaEnter == false)) {
                 event.getChannel().send().message("All Hail Dr Geekasaurus, Queen Of The Dinos!");
-                LisaEnter = true;
+                EntryValues.LisaEnter = true;
             }
             //Bot responds to first post by the account known as muted
-            if (event.getUser().getNick().equalsIgnoreCase("muted") && (MutedEnter == false)) {
+            if (event.getUser().getNick().equalsIgnoreCase("muted") && (EntryValues.MutedEnter == false)) {
                 event.getChannel().send().message("Muted Came in Like a Wrecking Ball, In the End He banned them all!");
-                MutedEnter = true;
+                EntryValues.MutedEnter = true;
+            }
+
+            //This is a test case
+            if (event.getUser().getNick().equalsIgnoreCase("ameria5") && (EntryValues.AmeriaEnter == false)) {
+                event.getChannel().send().message("I am a test case and can be removed later.");
+                EntryValues.AmeriaEnter = true;
             }
         }//End visitor If
 
