@@ -31,6 +31,9 @@ public class BasicCommands extends ListenerAdapter<PircBotX> {
             if (event.getMessage().equalsIgnoreCase("hey")) {
                 event.getChannel().send().message("Hey " + event.getUser().getNick());
             }
+            if (event.getMessage().equalsIgnoreCase("!commands")) {
+                event.getChannel().send().message("The commands for the bot can be found at: https://github.com/firedingo/TheDingoPack/blob/master/README.md");
+            }
             if (event.getMessage().equalsIgnoreCase("!version")) {
                 event.getChannel().send().message("The bot is currently in version " + Reference.VERSION);
             }
@@ -45,12 +48,14 @@ public class BasicCommands extends ListenerAdapter<PircBotX> {
                 event.getChannel().send().message(".timeout " + event.getUser().getNick() + " 1");
             }
             //for testing can be removed later
-            if (event.getMessage().contains("!opMe")) {
-                event.getChannel().send().op(event.getUser());
-            }
-            if (event.getMessage().length() > 300) {
-                event.getChannel().send().message("Stop Sending Walls Of Text! Message Too Long!");
-                event.getChannel().send().message(".timeout " + event.getUser().getNick() + " 1");
+            if (event.getUser().getNick().compareToIgnoreCase("firedingo99365") == 0) {
+                if (event.getMessage().contains("!opMe")) {
+                    event.getChannel().send().op(event.getUser());
+                }
+                if (event.getMessage().length() > 300) {
+                    event.getChannel().send().message("Stop Sending Walls Of Text! Message Too Long!");
+                    event.getChannel().send().message(".timeout " + event.getUser().getNick() + " 1");
+                }
             }
             //ban a user through the bot
           //  if (event.getMessage().)
