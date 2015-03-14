@@ -5,6 +5,7 @@ import ch.qos.logback.classic.Logger;
 import firedingo.project.bot.commands.BasicCommands;
 import firedingo.project.bot.commands.FunCommands;
 import firedingo.project.bot.commands.SpecialCommands;
+import firedingo.project.bot.events.EventHandler;
 import org.pircbotx.Configuration;
 import org.pircbotx.PircBotX;
 
@@ -25,6 +26,7 @@ public class TheDingoPack {
             .setServerPort(firedingo.project.bot.reference.Reference.PORT)
             .addListener(new BasicCommands())
             .addListener(new SpecialCommands())
+            .addListener(new EventHandler())
             .addListener(new FunCommands())
 
             .addAutoJoinChannel(firedingo.project.bot.reference.Reference.BOTCHAN)
